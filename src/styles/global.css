@@ -337,6 +337,21 @@ body {
   border-color: var(--accent);
 }
 
+/* ─── SUPERSCRIPT FOOTNOTE REFERENCES ─── */
+
+.essay sup a {
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.essay sup a:hover {
+  color: var(--text);
+  border-bottom: none;
+}
+
 /* ─── PAGE TRANSITIONS ─── */
 
 .essay,

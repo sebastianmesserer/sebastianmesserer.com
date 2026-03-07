@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const essays = await getCollection('essays');
+essays.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout
+  title="Sebastian Messerer"
+  description="Content Systems Architect and creator of Content OS™. Essays on Content 2.0 and the shift from content-as-marketing to content-as-infrastructure."
+>
+  <div class="homepage">
+    <h1>Sebastian Messerer</h1>
+    <p class="intro">
+      Content Systems Architect and creator of Content OS™. I write about the shift from
+      content-as-marketing to content-as-infrastructure — what I call Content 2.0 — and the
+      agentic AI capabilities that make it possible.
+    </p>
+
+    <ul class="essay-list">
+      {
+        essays.map((essay) => (
+          <li>
+            <a href={`/essays/${essay.slug}`}>
+              <div class="essay-list-title">{essay.data.title}</div>
+              <div class="essay-list-date">
+                {essay.data.date.toLocaleDateString('en-GB', {
+                  month: 'long',
+                  year: 'numeric',
+                })}
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</BaseLayout>

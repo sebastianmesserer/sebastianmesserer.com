@@ -1,0 +1,90 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  date: Date;
+  description: string;
+  headings: { depth: number; slug: string; text: string }[];
+}
+
+const { title, subtitle, date, description, headings } = Astro.props;
+
+const h2Headings = headings.filter((h) => h.depth === 2);
+
+const formattedDate = date.toLocaleDateString('en-GB', {
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<BaseLayout
+  title={`Sebastian Messerer — ${title}`}
+  description={description}
+  ogType="article"
+  article={{
+    author: 'Sebastian Messerer',
+    datePublished: date.toISOString(),
+    headline: title,
+  }}
+>
+  <div class="essay-layout">
+    <aside class="toc">
+      <div class="toc-label">Contents</div>
+      <ol>
+        {
+          h2Headings.map((h) => (
+            <li>
+              <a href={`#${h.slug}`}>{h.text}</a>
+            </li>
+          ))
+        }
+      </ol>
+    </aside>
+
+    <article class="essay">
+      <h1 class="essay-title">{title}</h1>
+      {subtitle && <p class="essay-subtitle">{subtitle}</p>}
+      <p class="essay-date">{formattedDate}</p>
+
+      <slot />
+
+      <div class="essay-footer">
+        <p>
+          Sebastian Messerer is a Content Systems Architect and the creator of Content OS™.
+          Previously Senior Content Strategist at Amazon, where he designed AI-powered content
+          systems serving three European markets.
+        </p>
+        <p style="margin-top: 0.8rem;">
+          <a href="https://linkedin.com/in/sebastianmesserer">LinkedIn</a> ·
+          <a href="mailto:srmesserer@gmail.com">Email</a>
+        </p>
+      </div>
+    </article>
+  </div>
+</BaseLayout>
+
+<script>
+  // Highlight active TOC link based on scroll position
+  const tocLinks = document.querySelectorAll('.toc a');
+  const headings = document.querySelectorAll('.essay h2');
+
+  if (tocLinks.length && headings.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            tocLinks.forEach((link) => {
+              link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            });
+          }
+        });
+      },
+      { rootMargin: '-20% 0px -70% 0px' }
+    );
+
+    headings.forEach((h) => observer.observe(h));
+  }
+</script>

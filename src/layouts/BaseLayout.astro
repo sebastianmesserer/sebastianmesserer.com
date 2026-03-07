@@ -4,7 +4,6 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description: string;
-  canonicalURL?: string;
   ogType?: string;
   ogImage?: string;
   article?: {
@@ -17,13 +16,20 @@ interface Props {
 const {
   title,
   description,
-  canonicalURL = Astro.url.href,
   ogType = 'website',
   ogImage = '/og-image.png',
   article,
 } = Astro.props;
 
 const siteURL = 'https://sebastianmesserer.com';
+
+// Strip the base path from the URL so canonical URLs are always relative to the
+// custom domain root, regardless of whether base is set for GitHub Pages.
+const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // e.g. '/sebastianmesserer.com' or ''
+const pathname = Astro.url.pathname.startsWith(base)
+  ? Astro.url.pathname.slice(base.length) || '/'
+  : Astro.url.pathname;
+const canonicalURL = new URL(pathname, siteURL).href;
 const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `${siteURL}${ogImage}`;
 
 const jsonLd = article

@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install 2>&1)",
+      "Bash(npm run build 2>&1)",
+      "Bash(node -e \"const a = require\\('./node_modules/astro/package.json'\\); console.log\\(a.version\\)\")",
+      "Bash(npm install @astrojs/sitemap@3.1.6 --save-exact 2>&1)",
+      "Bash(grep -o '\"@type\":\"Article\"' /Users/sebastianmesserer/sebastianmesserer.com/dist/essays/content-2-0/index.html && grep -c '<h2 id=' /Users/sebastianmesserer/sebastianmesserer.com/dist/essays/content-2-0/index.html && grep -c 'class=\"toc\"' /Users/sebastianmesserer/sebastianmesserer.com/dist/essays/content-2-0/index.html && grep '<title>' /Users/sebastianmesserer/sebastianmesserer.com/dist/essays/content-2-0/index.html)",
+      "Bash(npm run dev 2>&1)",
+      "Bash(gh repo create sebastianmesserer/sebastianmesserer.com --public --description \"Personal essay site\" 2>&1)",
+      "Bash(git init && git add package.json package-lock.json astro.config.mjs tsconfig.json .gitignore src/ public/ .github/ 2>&1)",
+      "Bash(git commit -m \"$\\(cat <<'EOF'\nInitial site: Astro essay site with sidebar TOC, SEO, and GitHub Pages deployment\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git remote add origin https://github.com/sebastianmesserer/sebastianmesserer.com.git && git push -u origin main 2>&1)",
+      "Bash(gh api repos/sebastianmesserer/sebastianmesserer.com/pages --method POST -f build_type=workflow 2>&1)",
+      "Bash(gh run list --repo sebastianmesserer/sebastianmesserer.com --limit 3 2>&1)",
+      "Bash(gh run view 22796840376 --repo sebastianmesserer/sebastianmesserer.com --log-failed 2>&1)",
+      "Bash(gh api repos/sebastianmesserer/sebastianmesserer.com/pages 2>&1)",
+      "Bash(gh workflow run deploy.yml --repo sebastianmesserer/sebastianmesserer.com 2>&1)",
+      "Bash(sleep 30 && gh run watch 22796880383 --repo sebastianmesserer/sebastianmesserer.com 2>&1)",
+      "Bash(git add astro.config.mjs src/layouts/BaseLayout.astro && git commit -m \"$\\(cat <<'EOF'\nFix CSS and canonical URLs for GitHub Pages subpath deployment\n\nSet base: '/sebastianmesserer.com' so Astro prefixes asset paths correctly.\nStrip base from Astro.url.pathname before computing canonical/OG URLs so they\nresolve to the custom domain root rather than doubling the subpath.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n\\)\" && git push 2>&1)",
+      "Bash(sleep 25 && gh run list --repo sebastianmesserer/sebastianmesserer.com --limit 1 2>&1)",
+      "Bash(git add public/CNAME astro.config.mjs && git commit -m \"$\\(cat <<'EOF'\nConnect custom domain sebastianmesserer.com\n\nAdd CNAME file and remove base path now that the domain handles routing from root.\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n\\)\" && git push 2>&1)",
+      "Bash(gh api repos/sebastianmesserer/sebastianmesserer.com/pages --method PUT -f cname='sebastianmesserer.com' -f build_type='workflow' 2>&1)",
+      "Bash(git config --global user.name \"Sebastian Messerer\" && git config --global user.email \"sebastian@sebastianmesserer.com\")",
+      "Bash(git add src/content/essays/one-machine.md src/content/essays/ src/plugins/ src/styles/global.css src/pages/index.astro src/pages/about.astro astro.config.mjs && git status)",
+      "Bash(git commit -m \"$\\(cat <<'EOF'\nAdd One Machine essay, update About and homepage, add footnotes\n\n- Replace sample essay with One Machine \\(real content\\)\n- Footnotes rendered as superscript numbers linking to Notes section at bottom\n- Update homepage intro copy\n- Update About page with bio text and new email\n\nCo-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>\nEOF\n\\)\" && git push 2>&1)"
+    ]
+  }
+}

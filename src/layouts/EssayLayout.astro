@@ -56,6 +56,8 @@ const formattedDate = date.toLocaleDateString('en-GB', {
         </p>
         <p style="margin-top: 0.8rem;">
           <a href="mailto:sebastian@sebastianmesserer.com">Email</a>
+          &ensp;·&ensp;
+          <a href="https://x.com/SRMesserer">X</a>
         </p>
       </div>
     </article>
@@ -63,6 +65,49 @@ const formattedDate = date.toLocaleDateString('en-GB', {
 </BaseLayout>
 
 <script>
+  // Build footnote tooltips from endnote content
+  const supRefs = document.querySelectorAll('.essay sup[id^="fnref-"]');
+
+  supRefs.forEach((sup) => {
+    const id = sup.id.replace('fnref-', '');
+    const fnSpan = document.getElementById(`fn-${id}`);
+    if (!fnSpan) return;
+
+    const wrapper = document.createElement('span');
+    wrapper.className = 'footnote-ref';
+    sup.parentNode.insertBefore(wrapper, sup);
+    wrapper.appendChild(sup);
+
+    const tooltip = document.createElement('span');
+    tooltip.className = 'footnote-tooltip';
+    tooltip.innerHTML = fnSpan.innerHTML;
+    wrapper.appendChild(tooltip);
+  });
+
+  // Click/tap: first tap shows tooltip, second tap navigates to endnote
+  document.addEventListener('click', (e) => {
+    const supLink = e.target.closest('.footnote-ref > sup > a');
+    if (supLink) {
+      const ref = supLink.closest('.footnote-ref');
+      if (!ref.classList.contains('tooltip-visible')) {
+        e.preventDefault();
+        document.querySelectorAll('.footnote-ref.tooltip-visible').forEach((el) =>
+          el.classList.remove('tooltip-visible')
+        );
+        ref.classList.add('tooltip-visible');
+        return;
+      }
+      return; // tooltip already visible — allow navigation
+    }
+
+    // Click outside tooltip → close all
+    if (!e.target.closest('.footnote-tooltip')) {
+      document.querySelectorAll('.footnote-ref.tooltip-visible').forEach((el) =>
+        el.classList.remove('tooltip-visible')
+      );
+    }
+  });
+
   // Highlight active TOC link based on scroll position
   const tocLinks = document.querySelectorAll('.toc a');
   const headings = document.querySelectorAll('.essay h2');

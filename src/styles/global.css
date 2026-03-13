@@ -5,8 +5,8 @@
   --text-muted: #9a9590;
   --text-dim: #6b6560;
   --accent: #c8b8a0;
-  --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --sans: 'Source Sans 3', 'Helvetica Neue', Helvetica, sans-serif;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --max-content: 680px;
   --sidebar-width: 260px;
   --border-color: rgba(255, 255, 255, 0.06);

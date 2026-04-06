@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  /* Using locally available fonts */
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #FAF8F5;
+    color: #2D2A26;
+    width: 1180px;
+    padding: 52px 56px 48px;
+  }
+
+  .header {
+    margin-bottom: 40px;
+    border-bottom: 1.5px solid #D6D0C8;
+    padding-bottom: 24px;
+  }
+
+  .header h1 {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    color: #1A1816;
+    margin-bottom: 6px;
+  }
+
+  .header p {
+    font-size: 13px;
+    color: #8C857A;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .header p em {
+    font-style: italic;
+    color: #9C958A;
+  }
+
+  .column-labels {
+    display: grid;
+    grid-template-columns: 108px 1fr 44px 1fr;
+    align-items: center;
+    margin-bottom: 14px;
+    padding: 0 4px;
+  }
+
+  .column-labels span {
+    font-size: 10.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #B0A99E;
+  }
+
+  .column-labels span:nth-child(3) {
+    text-align: center;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 108px 1fr 44px 1fr;
+    align-items: stretch;
+    margin-bottom: 14px;
+    min-height: 0;
+  }
+
+  .dept-tag {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 16px;
+  }
+
+  .dept-tag span {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 4px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  .dept-sales span { background: #FFF3E0; color: #BF6B00; }
+  .dept-cs span { background: #E8F5E9; color: #2E7D32; }
+  .dept-people span { background: #F3E5F5; color: #7B1FA2; }
+  .dept-legal span { background: #E3F2FD; color: #1565C0; }
+  .dept-product span { background: #FFF8E1; color: #9E7A12; }
+  .dept-finance span { background: #EFEBE9; color: #795548; }
+
+  .source-card {
+    background: #FFFFFF;
+    border: 1px solid #E8E3DC;
+    border-radius: 6px;
+    padding: 14px 18px;
+    position: relative;
+  }
+
+  .source-label {
+    font-size: 9.5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    color: #B0A99E;
+    margin-bottom: 6px;
+  }
+
+  .source-text {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: #4A4640;
+  }
+
+  .source-meta {
+    margin-top: 8px;
+    font-size: 11px;
+    color: #B0A99E;
+    font-style: italic;
+  }
+
+  .arrow-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .arrow-col svg {
+    width: 28px;
+    height: 28px;
+    opacity: 0.35;
+  }
+
+  .content-job-card {
+    background: #1A1816;
+    border-radius: 6px;
+    padding: 14px 18px;
+    position: relative;
+  }
+
+  .job-label {
+    font-size: 9.5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    color: #8C857A;
+    margin-bottom: 6px;
+  }
+
+  .job-text {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: #F0ECE6;
+  }
+
+  .job-measure {
+    margin-top: 8px;
+    font-size: 11px;
+    color: #8C857A;
+  }
+
+  .footer {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid #E8E3DC;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-left {
+    font-size: 11.5px;
+    color: #B0A99E;
+    line-height: 1.5;
+  }
+
+  .footer-right {
+    font-size: 10px;
+    color: #CCC6BC;
+    text-align: right;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Structural Content jobs — generated from a company's live business tasks</h1>
+  <p>An AI agent scans the full width of a mid-size SaaS company's project management boards, identifies business jobs-to-be-done that content can help serve, and generates content job tickets in response. <em>Fictional company, real-world plausibility.</em></p>
+</div>
+
+<div class="column-labels">
+  <span></span>
+  <span>Business task being tracked</span>
+  <span></span>
+  <span>Content job generated</span>
+</div>
+
+<!-- Row 1: Sales — on-ramp, familiar territory -->
+<div class="row">
+  <div class="dept-tag dept-sales"><span>Sales</span></div>
+  <div class="source-card">
+    <div class="source-label">Sales Enablement</div>
+    <div class="source-text">Competitive battle card vs. Competitor X — last updated Nov 2025. Lost deal at Flixbus: cited missing Gantt feature as reason.</div>
+    <div class="source-meta">Flagged overdue · linked to Q2 pipeline</div>
+  </div>
+  <div class="arrow-col">
+    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 14h16m0 0l-5-5m5 5l-5 5" stroke="#2D2A26" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="content-job-card">
+    <div class="job-label">Content job</div>
+    <div class="job-text">Rebuild competitive one-pager addressing workflow visualization gap. Include 3 customer workaround examples. Flag to SDR team before Siemens Energy demo (9 Apr).</div>
+    <div class="job-measure">Measure: SDR confidence score pre/post, win rate on deals where Competitor X is shortlisted</div>
+  </div>
+</div>
+
+<!-- Row 2: Product — familiar function, but AI cross-references feature requests with launch -->
+<div class="row">
+  <div class="dept-tag dept-product"><span>Product</span></div>
+  <div class="source-card">
+    <div class="source-label">Q2 Roadmap + Feature Requests</div>
+    <div class="source-text">Granular role permissions (viewer / editor / admin) in development. 3 Enterprise accounts have separately requested SSO group-to-role mapping via feature request board.</div>
+    <div class="source-meta">Cross-referenced: roadmap × feature requests × deal pipeline</div>
+  </div>
+  <div class="arrow-col">
+    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 14h16m0 0l-5-5m5 5l-5 5" stroke="#2D2A26" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="content-job-card">
+    <div class="job-label">Content job</div>
+    <div class="job-text">Send targeted pre-launch note to the 3 accounts that requested role mapping, confirming their request is shipping in Q2. Include setup preview and offer early access. Coordinate timing with CS owners.</div>
+    <div class="job-measure">Measure: Reply rate from those 3 accounts, expansion pipeline attributed to proactive outreach</div>
+  </div>
+</div>
+
+<!-- Row 3: Customer Success — crossing into non-marketing territory -->
+<div class="row">
+  <div class="dept-tag dept-cs"><span>Cust. Success</span></div>
+  <div class="source-card">
+    <div class="source-label">Book of Business — At Risk</div>
+    <div class="source-text">Flaconi — weekly active usage at 31%, account champion left in February. Renewal in 60 days, CS flagged as at-risk.</div>
+    <div class="source-meta">Renewal date: June 2026 · 180 seats</div>
+  </div>
+  <div class="arrow-col">
+    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 14h16m0 0l-5-5m5 5l-5 5" stroke="#2D2A26" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="content-job-card">
+    <div class="job-label">Content job</div>
+    <div class="job-text">Produce 4-part re-activation email sequence for admin users at accounts below 40% WAU, showcasing report scheduling and CSV export. Personalize with Flaconi's own usage data.</div>
+    <div class="job-measure">Measure: WAU change at Flaconi over 21 days, admin login frequency</div>
+  </div>
+</div>
+
+<!-- Row 4: People — further from content's usual orbit -->
+<div class="row">
+  <div class="dept-tag dept-people"><span>People</span></div>
+  <div class="source-card">
+    <div class="source-label">Onboarding — New Hire</div>
+    <div class="source-text">Content Marketing Manager starting in London office, 14 April. 30-60-90 day plan template to be prepared. First blog post expected within Month 1.</div>
+    <div class="source-meta">Role: Content Marketing Manager · London</div>
+  </div>
+  <div class="arrow-col">
+    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 14h16m0 0l-5-5m5 5l-5 5" stroke="#2D2A26" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="content-job-card">
+    <div class="job-label">Content job</div>
+    <div class="job-text">Compile onboarding content pack: editorial voice guide, channel strategy overview, content calendar walkthrough, and brand guidelines summary. Deliver to hiring manager by 11 Apr.</div>
+    <div class="job-measure">Measure: Time to first independent publish, onboarding satisfaction score</div>
+  </div>
+</div>
+
+<!-- Row 5: Legal — genuinely new territory -->
+<div class="row">
+  <div class="dept-tag dept-legal"><span>Legal</span></div>
+  <div class="source-card">
+    <div class="source-label">Active Matters + ISO 27001</div>
+    <div class="source-text">Siemens Energy sent 87-question procurement questionnaire. ISO 27001 surveillance audit evidence collection in progress. Inbound question on US data transfers.</div>
+    <div class="source-meta">3 matters referencing compliance posture this month</div>
+  </div>
+  <div class="arrow-col">
+    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 14h16m0 0l-5-5m5 5l-5 5" stroke="#2D2A26" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="content-job-card">
+    <div class="job-label">Content job</div>
+    <div class="job-text">Create modular security & compliance fact sheet for reuse across procurement responses. Cover ISO 27001 status, GDPR posture, data residency options. Format as drop-in answers.</div>
+    <div class="job-measure">Measure: Time saved per procurement response, Legal team hours reclaimed per quarter</div>
+  </div>
+</div>
+
+<!-- Row 6: Finance — mind-expanding -->
+<div class="row">
+  <div class="dept-tag dept-finance"><span>Finance</span></div>
+  <div class="source-card">
+    <div class="source-label">FP&A — Planning</div>
+    <div class="source-text">Prepare unit economics slide for board meeting: CAC, LTV, payback period. Forecast impact of Billing v2 pricing tiers on ARPU. Q1 cohort retention chart requested.</div>
+    <div class="source-meta">Board meeting: late April · Series C investors</div>
+  </div>
+  <div class="arrow-col">
+    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 14h16m0 0l-5-5m5 5l-5 5" stroke="#2D2A26" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="content-job-card">
+    <div class="job-label">Content job</div>
+    <div class="job-text">Write investor-facing narrative connecting self-serve billing rollout to projected CAC reduction and LTV improvement. Source Q1 cohort data. Format for board deck insertion.</div>
+    <div class="job-measure">Measure: Investor questions on unit economics (fewer = better), follow-on funding signal</div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-left">
+    Each content job is tied to a specific business outcome. None were requested by a human —<br>they were identified by AI scanning the company's existing project management boards.
+  </div>
+  <div class="footer-right">
+    Concept illustration · Structural Content<br>
+    sebastianmesserer.com
+  </div>
+</div>
+
+</body>
+</html>

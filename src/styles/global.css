@@ -552,17 +552,39 @@ body {
   color: var(--text);
 }
 
-/* ─── ESSAY FIGURES ─── */
+/* ─── DIAGRAM EMBED ─── */
 
-.essay .essay-figure {
+.essay .diagram-container {
   margin: 2.5rem 0;
 }
 
-.essay .essay-figure img {
+.essay .diagram-scroll {
   width: 100%;
-  height: auto;
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+.essay .diagram-frame {
+  width: 1180px;
+  height: 1080px;
+  border: none;
   display: block;
-  border-radius: 4px;
+}
+
+.essay .diagram-link {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  text-align: right;
+  margin-top: 0.5rem;
+  border-bottom: none !important;
+}
+
+.essay .diagram-link:hover {
+  color: var(--text);
+  border-bottom: none !important;
 }
 
 /* ─── PAGE TRANSITIONS ─── */

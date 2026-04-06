@@ -14,8 +14,6 @@ description: "Most company content exists without a clear business case. Structu
 <p>The result: content no longer serves engagement. It serves the business, by way of engagement.</p>
 </div>
 
-<div class="pull-quote">"Content no longer serves engagement. It serves the business, by way of engagement."</div>
-
 ## The biggest problem with content so far has been murky ROI
 
 In most areas of a business, you generally know how the money you are spending is impacting specific business outcomes. When you add a sales headcount, you measure the return in extra revenue. When you buy a machine for the production line, you know exactly which role that machine plays in delivering the product. When it comes to content, the line from spend to business impact is usually not so clear. Outside of direct-response marketing content such as paid ads or email campaigns, where you can track immediate conversion rates, ROI gets murky. Which is a problem, as the majority of content companies produce today actually falls outside of digital marketing.<sup id="fnref-1"><a href="#fn-1">1</a></sup> Across brand-building content, community content, PR content, thought leadership pieces, employer branding, customer education, internal comms, success is not typically measured in terms of specific business outcomes. It's measured by proxy, in the form of "engagement". With content usually being one of the bigger cost centers in companies, not knowing exactly what you are getting for your spend is all the more uncomfortable.<sup id="fnref-2"><a href="#fn-2">2</a></sup>
@@ -40,19 +38,22 @@ Enter agentic AI. With agentic AI, AI can now connect to databases and pull info
 
 **Structural Content** is content that serves specific internal business needs, functioning as a load-bearing component of a company's business operations, rather than an extraneous activity layered on top of them. As such, it is always tied to quantifiable business outcomes. It is produced using a network of agentic and generative AI and supporting infrastructure to scan the full width of a company's operational jobs-to-be-done (JTBDs) at regular intervals, identify opportunities for content to contribute, and trigger respective content requests for production and deployment.
 
-<div class="pull-quote">"Structural Content does for content what supply chain management did for manufacturing logistics."</div>
-
 Structural Content does for content what supply chain management did for manufacturing logistics: it replaces human scanning of an impossibly complex system — a company's full set of ongoing JTBDs — with AI that monitors the full picture continuously and triggers demand signals.
+
+<div class="pull-quote">"Structural Content does for content what supply chain management did for manufacturing logistics."</div>
 
 **The mechanism:** A company's JTBDs are maintained in a central live system, typically synced automatically with and/or translated from data in tools already in use (Asana, Salesforce, Jira, product roadmaps). Agentic AI with professional-grade content and marketing skills scans the jobs at set intervals to identify opportunities where content can help, and generates content job tickets in response. The content department makes go/no-go decisions, prioritizes and processes the job tickets through production, deployment and iteration. The content affects the business outcomes it has been triggered to serve, which in turn changes the JTBD backlog. Content becomes part of the narrative of a company's progress towards its desired business outcomes.
 
 **The impact:** Broad use cases like "drive brand awareness" are replaced with specific use cases like "Drive awareness among [specific segment] of [specific brand image] that is a prerequisite for entering the consideration phase for [specific product]." Brand building becomes the cumulative result of many targeted exercises, each serving a specific need, each measurable. In addition, the AI JTBD-scanning is likely to unlock new granular business use cases for content outside of marketing, in areas like user research, product development, production and human resources.
 
-<figure class="essay-figure">
-  <img src="/structural-content-jobs.png" alt="Examples of Structural Content jobs tied to specific business outcomes" />
-</figure>
+<div class="diagram-container">
+<div class="diagram-scroll"><iframe src="/structural-content-jobs.html" title="Structural Content jobs — examples of AI-generated content jobs from a company's live business tasks" frameborder="0" class="diagram-frame"></iframe></div>
+<a href="/structural-content-jobs.html" target="_blank" rel="noopener" class="diagram-link">Open in full page ↗</a>
+</div>
 
 Across all use cases, every single piece of Structural Content is tied to a specific business outcome it is serving. Your content ROI is clear, per piece, across content categories, and across your entire content function. Content no longer serves engagement, it serves the business, by way of engagement. There is no more room for murky ROI, content has become pragmatic. And, with that, Structural Content opens the door to a host of additional AI content use cases.
+
+<div class="pull-quote">"Content no longer serves engagement. It serves the business, by way of engagement."</div>
 
 ## Setting the stage for near-autonomous content operations
 

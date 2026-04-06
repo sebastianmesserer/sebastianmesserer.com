@@ -216,7 +216,7 @@ body {
 
 .essay-date {
   font-family: var(--sans);
-  font-size: 0.82rem;
+  font-size: 0.7rem;
   color: var(--text-dim);
   margin-bottom: 3rem;
 }

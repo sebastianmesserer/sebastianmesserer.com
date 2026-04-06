@@ -4,6 +4,7 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description: string;
+  ogTitle?: string;
   ogType?: string;
   ogImage?: string;
   article?: {
@@ -16,10 +17,13 @@ interface Props {
 const {
   title,
   description,
+  ogTitle,
   ogType = 'website',
-  ogImage = '/og-image.png',
+  ogImage = '/essay_thumbnail.jpeg',
   article,
 } = Astro.props;
+
+const resolvedOgTitle = ogTitle ?? title;
 
 const siteURL = 'https://sebastianmesserer.com';
 
@@ -65,14 +69,14 @@ const jsonLd = article
 
     <!-- Open Graph -->
     <meta property="og:type" content={ogType} />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={resolvedOgTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageAbsolute} />
     <meta property="og:url" content={canonicalURL} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
+    <meta name="twitter:title" content={resolvedOgTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageAbsolute} />
 

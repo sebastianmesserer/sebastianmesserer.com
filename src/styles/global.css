@@ -506,6 +506,65 @@ body {
   margin-bottom: 0;
 }
 
+/* ─── TL;DR BLOCK ─── */
+
+.essay .tldr {
+  background: var(--bg-subtle);
+  border-left: 2px solid var(--accent);
+  padding: 1.5rem 1.75rem;
+  margin: 2rem 0 3rem;
+  border-radius: 2px;
+}
+
+.essay .tldr p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+  font-style: normal;
+  line-height: 1.75;
+}
+
+.essay .tldr p:last-child {
+  margin-bottom: 0;
+}
+
+.essay .tldr strong {
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ─── PULL QUOTE ─── */
+
+.essay .pull-quote {
+  border-top: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
+  margin: 3rem 1.5rem;
+  padding: 1.6rem 0;
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+/* ─── ESSAY FIGURES ─── */
+
+.essay .essay-figure {
+  margin: 2.5rem 0;
+}
+
+.essay .essay-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
 /* ─── PAGE TRANSITIONS ─── */
 
 .essay,

@@ -1,7 +1,7 @@
 ---
 title: "One Machine"
 subtitle: "A simple vision of the future company"
-date: 2026-03-07
+date: 2026-03-14
 description: "Generative AI gave us the organs. Agentic AI gives us the nervous system. Together, they can be organism. A vision of the future company organised around one central, coordinated machine."
 ---
 

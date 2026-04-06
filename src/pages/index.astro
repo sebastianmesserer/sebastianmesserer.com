@@ -24,6 +24,7 @@ essays.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
               <div class="essay-list-title">{essay.data.title}</div>
               <div class="essay-list-date">
                 {essay.data.date.toLocaleDateString('en-GB', {
+                  day: 'numeric',
                   month: 'long',
                   year: 'numeric',
                 })}

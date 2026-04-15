@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SignupForm from '../components/SignupForm.astro';
 import { getCollection } from 'astro:content';
 
 const essays = await getCollection('essays');
@@ -34,5 +35,7 @@ essays.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
         ))
       }
     </ul>
+
+    <SignupForm />
   </div>
 </BaseLayout>

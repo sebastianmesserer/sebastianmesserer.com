@@ -1,15 +1,19 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import SignupForm from '../components/SignupForm.astro';
 
 interface Props {
   title: string;
   subtitle?: string;
   date: Date;
   description: string;
+  ogTitle?: string;
+  ogImage?: string;
+  showSignup?: boolean;
   headings: { depth: number; slug: string; text: string }[];
 }
 
-const { title, subtitle, date, description, headings } = Astro.props;
+const { title, subtitle, date, description, ogTitle, ogImage, showSignup, headings } = Astro.props;
 
 const h2Headings = headings.filter((h) => h.depth === 2);
 
@@ -23,6 +27,8 @@ const formattedDate = date.toLocaleDateString('en-GB', {
 <BaseLayout
   title={`Sebastian Messerer — ${title}`}
   description={description}
+  ogTitle={ogTitle}
+  ogImage={ogImage}
   ogType="article"
   article={{
     author: 'Sebastian Messerer',
@@ -50,6 +56,8 @@ const formattedDate = date.toLocaleDateString('en-GB', {
       <p class="essay-date">{formattedDate}</p>
 
       <slot />
+
+      {showSignup && <SignupForm />}
 
       <div class="essay-footer">
         <p>

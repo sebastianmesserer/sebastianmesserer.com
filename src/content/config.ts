@@ -7,6 +7,9 @@ const essays = defineCollection({
     subtitle: z.string().optional(),
     date: z.date(),
     description: z.string(),
+    ogTitle: z.string().optional(),
+    ogImage: z.string().optional(),
+    showSignup: z.boolean().optional(),
   }),
 });
 

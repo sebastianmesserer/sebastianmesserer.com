@@ -19,7 +19,10 @@ const { Content, headings } = await essay.render();
   subtitle={essay.data.subtitle}
   date={essay.data.date}
   description={essay.data.description}
+  ogTitle={essay.data.ogTitle}
+  ogImage={essay.data.ogImage}
   headings={headings}
+  showSignup={essay.data.showSignup}
 >
   <Content />
 </EssayLayout>

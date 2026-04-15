@@ -1,0 +1,57 @@
+---
+
+---
+
+<section class="signup-section">
+  <h2 class="signup-heading">Follow the development of Structural Content</h2>
+  <p class="signup-subtext">Leave your email if you'd like to stay in the loop as Structural Content develops — from first implementations to new essays.</p>
+
+  <form
+    class="signup-form"
+    action="https://formspree.io/f/mzdydbdl"
+    method="POST"
+  >
+    <input
+      type="email"
+      name="email"
+      required
+      placeholder="you@example.com"
+      class="signup-input"
+      autocomplete="email"
+    />
+    <button type="submit" class="signup-button">Keep me posted</button>
+  </form>
+
+  <p class="signup-confirmation" hidden>You're on the list.</p>
+</section>
+
+<script>
+  const form = document.querySelector('.signup-form') as HTMLFormElement;
+  const confirmation = document.querySelector('.signup-confirmation') as HTMLElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const button = form.querySelector('button') as HTMLButtonElement;
+    button.disabled = true;
+    button.textContent = 'Sending…';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+
+      if (res.ok) {
+        form.hidden = true;
+        confirmation.hidden = false;
+      } else {
+        button.textContent = 'Something went wrong — try again';
+        button.disabled = false;
+      }
+    } catch {
+      button.textContent = 'Something went wrong — try again';
+      button.disabled = false;
+    }
+  });
+</script>

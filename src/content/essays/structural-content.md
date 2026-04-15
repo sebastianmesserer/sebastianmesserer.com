@@ -3,6 +3,9 @@ title: "Structural Content"
 subtitle: "Serve the business, not engagement"
 date: 2026-04-06
 description: "Most company content exists without a clear business case. Structural Content uses agentic AI to scan a company's live business jobs-to-be-done, identify where content can contribute, and tie every piece of content to a measurable business outcome."
+ogTitle: "Structural Content — Serve the business, not engagement"
+ogImage: "/og-structural-content.png"
+showSignup: true
 ---
 
 <div class="tldr">

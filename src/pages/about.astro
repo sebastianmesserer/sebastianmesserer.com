@@ -4,13 +4,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="About — Sebastian Messerer"
-  description="Sebastian Messerer is a Berlin-based Senior Content Strategist at Amazon, where he leads B2B partner content strategy across Germany, the UK and Ireland."
+  description="Sebastian Messerer is a Berlin-based content strategist and founder of Structural Content, an AI system that turns a company's strategic priorities into content work."
 >
   <div class="about">
     <h1>About</h1>
     <img src="/headshot.jpg" alt="Sebastian Messerer" class="about-headshot" />
     <p>
-      Sebastian Messerer is a Berlin-based Senior Content Strategist at Amazon, where he leads B2B partner content strategy across Germany, the UK and Ireland, oversees the organisation's global channel strategy, and designs AI-driven content systems.
+      Sebastian Messerer is a Berlin-based content strategist and the founder of <a href="https://structuralcontent.com">Structural Content</a>, an AI system that reads a company's goals and live systems, finds where content can help, and turns that into clear work for the content team. He was most recently a Senior Content Strategist at Amazon, where he led B2B partner content strategy across Germany, the UK and Ireland and built AI-driven content systems that scaled across 13 markets.
     </p>
     <p>
       He started his career in television and video, learning the ropes at the BBC, the Bafta-award winning animation studio Jellyfish, and Constantin Entertainment — while producing short films and artist profiles exhibited at the Mori Art Museum, Tokyo. Over the following decade, he brought that storytelling foundation into business, leading video and content strategy for clients including Adobe, Allianz, and Corning Incorporated.
@@ -21,9 +21,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p>
       <a href="mailto:sebastian@sebastianmesserer.com">sebastian@sebastianmesserer.com</a>
       &ensp;·&ensp;
+      <a href="https://structuralcontent.com">Structural Content</a>
+      &ensp;·&ensp;
       <a href="https://x.com/SRMesserer">X</a>
       &ensp;·&ensp;
       <a href="https://www.linkedin.com/in/sebastian-messerer/">LinkedIn</a>
     </p>
   </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Sebastian Messerer',
+    url: 'https://sebastianmesserer.com',
+    jobTitle: 'Founder',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Structural Content',
+      url: 'https://structuralcontent.com',
+    },
+    sameAs: [
+      'https://structuralcontent.com',
+      'https://x.com/SRMesserer',
+      'https://www.linkedin.com/in/sebastian-messerer/',
+    ],
+  })} />
 </BaseLayout>

@@ -45,6 +45,17 @@ const jsonLd = article
         '@type': 'Person',
         name: article.author,
         url: siteURL,
+        jobTitle: 'Founder',
+        worksFor: {
+          '@type': 'Organization',
+          name: 'Structural Content',
+          url: 'https://structuralcontent.com',
+        },
+        sameAs: [
+          'https://structuralcontent.com',
+          'https://x.com/SRMesserer',
+          'https://www.linkedin.com/in/sebastian-messerer/',
+        ],
       },
       datePublished: article.datePublished,
       description: description,

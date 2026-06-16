@@ -407,6 +407,13 @@ body {
 .homepage .intro {
   font-size: 1.05rem;
   color: var(--text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.homepage .founder-line {
+  font-size: 0.95rem;
+  color: var(--text-dim);
   margin-bottom: 3rem;
   line-height: 1.8;
 }
